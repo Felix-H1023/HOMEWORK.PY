@@ -1,0 +1,113 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import random, time"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a='yes'\n",
+    "while a=='yes': \n",
+    "    b=1\n",
+    "    while b==1: \n",
+    "        HowManyDice=int(input(print('how many dice do you want to play with? DO NOT ENTER NEGATIVES'))) \n",
+    "        #this is asking the user for the number of dice.\n",
+    "        if HowManyDice>10: \n",
+    "            #this makes the maximum dice num of dice ten\n",
+    "            print('Too many dice. Please enter a number thats less than', HowManyDice)\n",
+    "        else: \n",
+    "            b=0\n",
+    "    print('rolling dice')#rolls the dice\n",
+    "    dice=[]\n",
+    "    for i in range(HowManyDice): \n",
+    "        time.sleep(.1)\n",
+    "        print('.')\n",
+    "        a=random.randint(1,6)\n",
+    "        dice.append(a)\n",
+    "    print('you rolled', dice)#tells user what he or she rolled\n",
+    "    time.sleep(.05)\n",
+    "    reroll=(input('Would u like to roll again? yes or no.'))#asks user if he or she would like to reroll\n",
+    "    if reroll=='yes': \n",
+    "        print('rerolling dice.....')#rerolls userdice\n",
+    "        dice=[]\n",
+    "        for i in range(HowManyDice): \n",
+    "            a=random.randint(1,6)\n",
+    "            dice.append(a)\n",
+    "        print('you rolled', dice)\n",
+    "    else: \n",
+    "        print(\"saving dice\")#saves dice\n",
+    "    usertotal=sum(dice) \n",
+    "    time.sleep(.5)\n",
+    "    print('computers turn')#tells user that its the computer's turn\n",
+    "    computerdice=[]\n",
+    "    for i in range(HowManyDice): #rolls computer's dice\n",
+    "        a=random.randint(1,6)\n",
+    "        computerdice.append(a)\n",
+    "    time.sleep(.5)\n",
+    "    print('computer rolled ', computerdice)\n",
+    "    computertotal1=sum(computerdice)\n",
+    "    if computertotal<6: #computer's decision to keep what he has or to reroll\n",
+    "        print('Computer decides to reroll')\n",
+    "        computerdice=[]\n",
+    "        time.sleep\n",
+    "        for i in range(HowManyDice): #rerolls computer dice\n",
+    "            a=random.randint(1,6)\n",
+    "            computerdice.append(a)\n",
+    "        computertotal2=sum(computerdice)\n",
+    "        print('computer rerolled and got ', computerdice)\n",
+    "    else: \n",
+    "        if usertotal>computertotal2 computertotal2<computertotal1: \n",
+    "            print('computer notices your total is greater than its own and that it got less than before. then, it regrets rerolling')\n",
+    "        elif usertotal>computertotal2 computertotal2>computertotal1: \n",
+    "            print('computer notices that your total is greater than its own, but also realizes it got more than before')\n",
+    "        elif usertotal<computertotal2: \n",
+    "            print('computer is VERY happy with its roll')#keeps computer dice\n",
+    "    if usertotal<computertotal: #win or lose\n",
+    "        print('Sorry. You lost. Try again next time!')\n",
+    "    elif usertotal==computertotal : \n",
+    "        print('You tied with computer!')\n",
+    "    else: \n",
+    "        print('Good job! You won!')\n",
+    "    time.sleep(1)\n",
+    "    a=input('would you like to play again?')#asks user if she or he would like to play again"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
